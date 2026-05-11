@@ -12,7 +12,7 @@ jobs:
       - name: compile
         run: |
           $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android33-clang++ \
-          -shared src/main.cpp -o libstatic.so -llog -landroid
+          -shared src/main.cpp -o libstatic-linux.so -llog -landroid
       - name: release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
